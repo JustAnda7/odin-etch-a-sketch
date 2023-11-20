@@ -1,0 +1,24 @@
+* {
+    border: solid black 1px;
+}
+
+.primary-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.secondary-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid {
+    display: grid;
+    width: 400px;
+    height: 400px;
+}
+
+.grid-element {
+    /* border: 1px solid red; */
+    user-select: none;
+}
