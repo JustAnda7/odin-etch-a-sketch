@@ -8,18 +8,30 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="primary-container">
-        <div class="secondary-container">
-            <div>hello</div>
-            <div>world</div>
-            <div id="grid" class="grid"></div>
+    <header class="header">
+        <h1 class="title">ETCH-A-SKETCH</h1>
+    </header>
+    <main class="main">
+        <div class="options">
+            <input type="color" id="colorBtn" value="#000000">
+            <button id="clearBtn">CLEAR</button>
+            <button id="eraserBtn">ERASER</button>
+            <div id="sizeValue">16 x 16</div>
+            <input id="sizeSlider" type="range" value="16" min="1" max="64" />
         </div>
-        <button id="clearBtn">CLEAR</button>
-        <button id="colorBtn">color</label>
-        <input type="color" id="drawcolor" value="#ffffff">
-        <button id="eraserBtn">ERASER</button>
-        <div id="sizeValue">16 x 16</div>
-        <input id="sizeSlider" type="range" value="16" min="1" max="64" />
-    </div>
+        <div id="grid" class="grid"></div>
+    </main>
+    <footer class="footer">
+        <p>
+            Copyright ©
+            <script>
+              document.write(new Date().getFullYear())
+            </script>
+            JustAnda7
+          </p>
+          <a href="https://github.com/JustAnda7" target="_blank">
+            <i class="fab fa-github"></i
+          ></a>
+    </footer>
 </body>
 </html>

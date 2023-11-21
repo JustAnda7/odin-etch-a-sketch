@@ -12,7 +12,6 @@ function setColor(newColor) {
 
 const grid = document.getElementById('grid');
 const clearBtn = document.getElementById('clearBtn');
-const drawColor = document.getElementById('drawcolor');
 const eraserBtn = document.getElementById('eraserBtn');
 const colorBtn = document.getElementById('colorBtn');
 const sizeValue = document.getElementById('sizeValue');
@@ -46,6 +45,7 @@ document.body.onmouseup = () => { mouseDown = false; }
 
 function displaysize(size) {
     sizeValue.innerHTML = `${size} x ${size}`;
+    sizeSlider.value = size;
 }
 
 function updateSize(size) {
@@ -56,7 +56,7 @@ function updateSize(size) {
 function setupGrid(size) {
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-    sizeValue.innerHTML = `${size} x ${size}`;
+    displaysize(size);
     for (let i = 0; i < size*size; i++) {
         const gridElement = document.createElement('div');
         gridElement.classList.add('grid-element');
@@ -71,6 +71,14 @@ function setupGrid(size) {
             e.target.style.background = currentColor;
         })
         grid.appendChild(gridElement);
+    }
+}
+
+function startDrawing(e) {
+    if (!mouseDown) {
+        return;   
+    } else {
+        e.target.style.background = currentColor;
     }
 }
 
